@@ -4,6 +4,12 @@ def menu_principal():
     print("3) Imprimir hoja de ruta")
     print("4) Salir")
 
+
+def imprimir_por_comuna(comuna_buscada):
+    for pedido in l_pedidos:
+        if pedido[3] == comuna_buscada:
+            print(pedido)
+
 def registrar_pedido():
     nombre = input("Ingrese nombre")
     apellido = input("Ingrese apellido")
@@ -30,3 +36,6 @@ while True:
         registrar_pedido()
     elif op =="2":
         imprimir_listado_general()
+    elif op =="3":
+        comunaBuscada = input("Ingrese la comuna que desea listar")
+        imprimir_por_comuna(comunaBuscada)
